@@ -1,0 +1,41 @@
+---
+title: "Iris"
+description: |
+  Just testing out R on a static website!
+author:
+  - name: Emmanuel Ubachi
+    url: https://emmanuelubachi.github.io
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(dplyr)
+library(ggplot2)
+library(janitor)
+library(plotly)
+library(readr)
+
+```
+
+# Import data
+
+```{r}
+iris_clean <- read_csv("iris_clean.csv")
+```
+
+
+# Iris Exploration
+
+```{r}
+plot <- iris_clean %>%
+  ggplot(aes(x = petal_width, y = petal_length, color = species)) +
+  geom_point() +
+  scale_color_viridis_d() +
+  theme_light()
+  
+ggplotly(plot)
+
+```
+

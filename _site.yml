@@ -1,0 +1,15 @@
+name: "R-test"
+title: "R test"
+exclude: ["*.csv"]
+theme: styles.css
+description: |
+  em
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Go Back to Projects"
+      href: https://emmanuelubachi.github.io/#projects
+      
+output: distill::distill_article
